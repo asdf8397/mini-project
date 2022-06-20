@@ -1,3 +1,17 @@
+# [Chapter 1] 10조 S.A(Starting Assignment)
+
+## 🧑‍💻 Member
+<div align="center">
+
+| 🧑 팀장 | 🧑 팀원 | 🧑 팀원 |
+| :---: | :---: | :---: |
+| [<img src= "https://github.com/KumohDaseong/2021_SwBank/blob/main/readme_img/kimseonjin.png" width = "200">](https://github.com/gimseonjin)| [<img src="https://avatars.githubusercontent.com/u/81272109?v=4" width = "200">](https://github.com/asdf8397)| [<img src="https://avatars.githubusercontent.com/u/107820634?v=4" width = "200" >](https://github.com/kangyunmi)|
+| 김선진 | 김동영 | 강윤미 |
+ 
+
+
+</div>
+
 # 프로젝트 주제
 
 ## 주제 명 : 부동산 관련 커뮤니티
