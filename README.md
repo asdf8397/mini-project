@@ -32,68 +32,20 @@
 
 # 와이어 프레임
 
+![Slide1](https://user-images.githubusercontent.com/66009926/174580256-28ad6745-c79a-4715-98de-b094d28d78fd.jpg)
+![Slide2](https://user-images.githubusercontent.com/66009926/174580271-8823a247-7312-4373-87fd-74cbcefb5c46.jpg)
+![Slide3](https://user-images.githubusercontent.com/66009926/174580275-5c4fa344-8d86-4d06-af8e-b966e95bd552.jpg)
+![Slide4](https://user-images.githubusercontent.com/66009926/174580277-8b7d602c-1054-4dfb-8e6f-77c5f14960f7.jpg)
+![Slide5](https://user-images.githubusercontent.com/66009926/174580283-cb746a95-1c07-4ee9-a87d-149fd709ade1.jpg)
+
+
 # 상세 기능
 
 | 기능 명 | Method | URL | Request | Response |
 | --- | --- | --- | --- | --- |
-| 로그인 기능 | POST | /signin | {
-    “id” : string,
-    “pw” : string
-} | {
-    “result” : 0 or 1
-} |
-| 회원가입 기능 | POST | /signup | {
-    “id” : string,
-    “pw” : string,
-    “nickname” : string
-} | {
-    “result” : 0 or 1
-} |
-| 게시글 조회 | GET | /posts | {
-    “address” : string
-} | {
-   “posts” : [ ] 
-} |
-| 게시글 상세 조회 | GET | /posts/{id} | {
-    “id” : integer
-} | {
-
-”id” : integer, 
-
-“address” : string,
-
-“star_point” : integer,
-
-“title” : string,
-
-“description” : string,
-
-“link” : string,
-
-”nickname” : string
-
-} |
-| 게시글 등록 | POST | /posts | {
-
-“address” : string,
-
-“star_point” : integer,
-
-“title” : string,
-
-“description” : string,
-
-“link” : string,
-
-”nickname” : string
-
-} | {
-    “result” : 0 or 1
-} |
-| 게시글 삭제 | DELETE | /posts/{id} | {
-    “id” : integer,
-    “nickname” : string
-} | {
-    “result” : 0 or 1
-} |
-
+| 로그인 기능 | POST | /signin | { </br> &nbsp;&nbsp;&nbsp;&nbsp;“id” : string, </br> &nbsp;&nbsp;&nbsp;&nbsp;“pw” : string </br>} | { </br> &nbsp;&nbsp;&nbsp; &nbsp;“result” : 0 or 1 </br>} |
+| 회원가입 기능 | POST | /signup | {</br> &nbsp;&nbsp;&nbsp; &nbsp;“id” : string,</br> &nbsp;&nbsp;&nbsp; &nbsp;“pw” : string,</br> &nbsp;&nbsp;&nbsp; &nbsp;“nickname” : string</br>} | { </br> &nbsp;&nbsp;&nbsp; &nbsp;“result” : 0 or 1 </br>} |
+| 게시글 조회 | GET | /posts | {</br> &nbsp;&nbsp;&nbsp; &nbsp; “address” : string</br>} | {</br> &nbsp;&nbsp;&nbsp; &nbsp;“posts” : [ ] </br>} |
+| 게시글 상세 조회 | GET | /posts/{id} | {</br> &nbsp;&nbsp;&nbsp; &nbsp;“id” : integer</br>} | {</br> &nbsp;&nbsp;&nbsp; &nbsp;”id” : integer, </br> &nbsp;&nbsp;&nbsp; &nbsp;“address” : string, </br> &nbsp;&nbsp;&nbsp; &nbsp;“star_point” : integer, </br> &nbsp;&nbsp;&nbsp; &nbsp;“title” : string, </br> &nbsp;&nbsp;&nbsp; &nbsp;“description” : string, </br> &nbsp;&nbsp;&nbsp; &nbsp;“link” : string, </br> &nbsp;&nbsp;&nbsp; &nbsp;”nickname” : string</br>} |
+| 게시글 등록 | POST | /posts | {</br> &nbsp;&nbsp;&nbsp; &nbsp; “address” : string, </br> &nbsp;&nbsp;&nbsp; &nbsp; “star_point” : integer, </br> &nbsp;&nbsp;&nbsp; &nbsp; “title” : string, </br> &nbsp;&nbsp;&nbsp; &nbsp; “description” : string, </br> &nbsp;&nbsp;&nbsp; &nbsp; “link” : string, </br> &nbsp;&nbsp;&nbsp; &nbsp; ”nickname” : string </br>} | {</br> &nbsp;&nbsp;&nbsp; &nbsp;“result” : 0 or 1</br>} |
+| 게시글 삭제 | DELETE | /posts/{id} | {</br> &nbsp;&nbsp;&nbsp; &nbsp;“id” : integer,</br> &nbsp;&nbsp;&nbsp; &nbsp;“nickname” : string </br>} | {</br> &nbsp;&nbsp;&nbsp; &nbsp;“result” : 0 or 1</br>} |
