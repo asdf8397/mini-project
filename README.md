@@ -36,7 +36,64 @@
 
 | 기능 명 | Method | URL | Request | Response |
 | --- | --- | --- | --- | --- |
-| 로그인 기능 | POST |  |  |  |
-| 회원가입 기능 | POST |  |  |  |
-| 게시글 기능 | GET |  |  |  |
-| 주소 검색 기능 | GET |  |  |  |
+| 로그인 기능 | POST | /signin | {
+    “id” : string,
+    “pw” : string
+} | {
+    “result” : 0 or 1
+} |
+| 회원가입 기능 | POST | /signup | {
+    “id” : string,
+    “pw” : string,
+    “nickname” : string
+} | {
+    “result” : 0 or 1
+} |
+| 게시글 조회 | GET | /posts | {
+    “address” : string
+} | {
+   “posts” : [ ] 
+} |
+| 게시글 상세 조회 | GET | /posts/{id} | {
+    “id” : integer
+} | {
+
+”id” : integer, 
+
+“address” : string,
+
+“star_point” : integer,
+
+“title” : string,
+
+“description” : string,
+
+“link” : string,
+
+”nickname” : string
+
+} |
+| 게시글 등록 | POST | /posts | {
+
+“address” : string,
+
+“star_point” : integer,
+
+“title” : string,
+
+“description” : string,
+
+“link” : string,
+
+”nickname” : string
+
+} | {
+    “result” : 0 or 1
+} |
+| 게시글 삭제 | DELETE | /posts/{id} | {
+    “id” : integer,
+    “nickname” : string
+} | {
+    “result” : 0 or 1
+} |
+
