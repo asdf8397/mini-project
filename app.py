@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from crypt import methods
+from flask import Flask, render_template, request, jsonify
 from pymongo import MongoClient
 import certifi
 
@@ -67,20 +68,18 @@ def home():
    게시글 조회 관련 기능은 아래에 작생해주세요!!
 
    '''
-   return render_template('home.html')
+   posts = list(db.gallerys.find({},{'_id':False}))
 
-
-def example():
-   pass
+   return render_template('home.html', posts=posts)
 
 # 게시글 조회 기능 구현 영역 - 끝
 
 ###################################################################
 
-# 게시글 조회 기능 구현 영역 - 시작
+# 게시글 생성 기능 구현 영역 - 시작
 
-@app.route('/input_board')
-def input_board():
+@app.route('/input_board', methods=["GET"])
+def input_board_page_render():
    '''
    TODO - 김선진 : 게시글 입력 페이지 함수
 
@@ -92,11 +91,53 @@ def input_board():
    return render_template('input_board.html')
 
 
+@app.route('/input_board', methods=["POST"])
+def input_board():
 
-def example():
-   pass
+   address_receive = request.form['address']
+   star_point_receive = request.form['star_point']
+   title_receive = request.form['title']
+   description_receive = request.form['description']
+   link_receive = request.form['link']
+   nickname_receive = request.form['nickname']
+   img_url_receive = request.form['img_url']
 
-# 게시글 조회 기능 구현 영역 - 끝
+   board_list = list(db.community.find({},{'_id':False}))
+   count = len(board_list) + 1
+
+   doc = {
+       'num': count,
+       'address': address_receive,
+       'star_point': star_point_receive,
+       'title': title_receive,
+       'description': description_receive,
+       'link': link_receive,
+       'nickname': nickname_receive,
+       'img_url': img_url_receive,
+   }
+
+   try:
+      db.community.insert_one(doc)
+      return jsonify({"result" : True})
+   except:
+      return jsonify({"result" : False})
+
+# 게시글 생성 기능 구현 영역 - 끝
+
+###################################################################
+
+# 게시글 삭제 기능 구현 영역 - 시작
+
+@app.route('/delete_board/<num>', methods=["DELETE"])
+def delete_board():
+   num = request.args.get("num")
+   try:
+      db.community.delete_one({'num' : int(num)})
+      return jsonify({"result" : True})
+   except:
+      return jsonify({"result" : False})
+
+# 게시글 삭제 기능 구현 영역 - 끝
 
 ###################################################################
 
