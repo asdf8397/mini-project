@@ -21,10 +21,12 @@
 
 | Front | Back | Database | Infra |
 | :---: | :---: | :---: | :---: |
-| [<img src= "https://images.velog.io/images/offdutybyblo/post/65c734fd-077c-4a68-8b3b-557c52428511/htmljscss.jpeg" width = "200">]| [<img src="https://images.velog.io/images/new_wisdom/post/4a0259ee-b980-484b-8bf4-25eb4705459f/flask.png" width = "200">]| [<img src="https://t1.daumcdn.net/cfile/tistory/9923593359840EC50A" width = "200" >]| [<img src="http://wildpup.cafe24.com/wp-content/uploads/2014/12/ec2.png" width = "200" >]|
+| <img src= "https://images.velog.io/images/offdutybyblo/post/65c734fd-077c-4a68-8b3b-557c52428511/htmljscss.jpeg" width = "200">| <img src="https://images.velog.io/images/new_wisdom/post/4a0259ee-b980-484b-8bf4-25eb4705459f/flask.png" width = "200">| <img src="https://t1.daumcdn.net/cfile/tistory/9923593359840EC50A" width = "200" >| <img src="https://images.velog.io/images/chaeri93/post/f3592437-f2f9-48a3-8706-172852d5a10a/R800x0.png" width = "200" >|
 | html,css,javascript | Flask | Mongo DB | AWS EC2 |
  
 </div>
+
+</br>
 
 ## 선정 이유
 
