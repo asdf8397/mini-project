@@ -1,6 +1,10 @@
 body {
-    background-color: RGBA(232, 52, 78, 0.2);
+    /*background-color: RGBA(232, 52, 78, 0.2);*/
+    background-image: url("/static/estate.png");
+    /*background-repeat: no-repeat;*/
     min-height: 100vh;
+    /*width: auto;*/
+    /*height: auto;*/
 }
 
 .section {
