@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="../static/design/design.css">
+    <link rel="stylesheet" href="../static/mystyle/mystyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+    <title>게시글 작성 페이지</title>
+    <style>
+        body{
+            background-color: pink;
+        }
+        .container{
+            background-color: white;
+        }
+        #myform fieldset{
+            display: inline-block; /* 하위 별점 이미지들이 있는 영역만 자리를 차지함.*/
+            direction: rtl; /* 이모지 순서 반전 */
+            border: 0; /* 필드셋 테두리 제거 */
+        }
+        #myform fieldset legend{
+            text-align: left;
+        }
+        #myform input[type=radio]{
+            display: none; /* 라디오박스 감춤 */
+        }
+        #myform label{
+            font-size: 3em; /* 이모지 크기 */
+            color: transparent; /* 기존 이모지 컬러 제거 */
+            text-shadow: 0 0 0 #f0f0f0; /* 새 이모지 색상 부여 */
+        }
+        #myform label:hover{
+            text-shadow: 0 0 0 #a00; /* 마우스 호버 */
+        }
+        #myform label:hover ~ label{
+            text-shadow: 0 0 0 #a00; /* 마우스 호버 뒤에오는 이모지들 */
+        }
+        #myform input[type=radio]:checked ~ label{
+            text-shadow: 0 0 0 #a00; /* 마우스 클릭 체크 */
+        }
+    </style>  
+</head>
+<body>
+    <section class="hero is-white">
+        <div class="hero-body has-text-centered" style="padding-bottom:1rem;margin:auto;">
+         
+    <nav class="navbar is-fixed-top is-white" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="{{ url_for('static', filename='logo.png') }}">
+                <strong class="is-sparta" style="font-family: 'Stylish', sans-serif;font-size: larger;"> REAL ESTATE</strong>
+            </a>
+        </div>
+    </nav>
+    </div>
+    </section>
+
+
+    
+<section class="section">
+    <div class="container">
+        <label for="floatingInput">주소을 입력해주세요.</label>
+        <input type="text" class="form-control" id="address" placeholder="주소">
+
+        <label for="floatingInput">별점을 입력해주세요.</label>
+        
+        <div name="myform" id="myform">
+            <fieldset>
+                <input type="radio" name="rating" value="5" id="rate1"><label for="rate1">⭐</label>
+                <input type="radio" name="rating" value="4" id="rate2"><label for="rate2">⭐</label>
+                <input type="radio" name="rating" value="3" id="rate3"><label for="rate3">⭐</label>
+                <input type="radio" name="rating" value="2" id="rate4"><label for="rate4">⭐</label>
+                <input type="radio" name="rating" value="1" id="rate5"><label for="rate5">⭐</label>
+            </fieldset>
+        </div>
+        
+        <label for="floatingInput">제목을 입력해주세요.</label>
+        <input type="text" class="form-control" id="title" placeholder="제목">
+
+        <label for="floatingInput">내용을 입력해주세요.</label>
+        <input type="text" class="form-control" id="description" placeholder="내용">
+        
+        <label for="floatingInput">링크을 입력해주세요.</label>
+        <input type="text" class="form-control" id="link" placeholder="링크">
+
+        <label for="floatingInput">이미지를 입력해주세요.</label>
+        <input id="input-pic" class="file" type="file"name="resume">
+
+        <button onclick="save_board()" type="button" class="btn btn-dark">등록 하기</button>
+    </div>
+</section>
+
+    <script>
+        function save_board() {
+            let address = $('#address').val()
+            
+            let obj_length = document.getElementsByName("rating").length;
+            
+            let star_point = 0
+
+            for (var i=0; i<obj_length; i++) {
+                if (document.getElementsByName("rating")[i].checked == true) {
+                    star_point = document.getElementsByName("rating")[i].value;
+                }
+            }
+            let title = $('#title').val()
+            let description = $('#description').val()
+            let link = $('#link').val()
+            let file = $('#input-pic')[0].files[0]
+
+            let form_data = new FormData()
+            form_data.append("address", address)
+            form_data.append("star_point", star_point)
+            form_data.append("title", title)
+            form_data.append("description", description)
+            form_data.append("link", link)
+            form_data.append("file", file)
+
+            $.ajax({
+                type: "POST",
+                url: "/input_board",
+                data: form_data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    result = response['result']
+                    if (result)
+                        alert("게시글 생성에 성공했습니다.")
+                    else 
+                        alert("게시글 생성에 실패했습니다.")
+                    window.location.replace("/home")
+                }
+            })
+        }
+    </script>
+</body>
+</html>

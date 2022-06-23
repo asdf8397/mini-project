@@ -14,9 +14,19 @@
 | [<img src= "https://github.com/KumohDaseong/2021_SwBank/blob/main/readme_img/kimseonjin.png" width = "200">](https://github.com/gimseonjin)| [<img src="https://avatars.githubusercontent.com/u/81272109?v=4" width = "200">](https://github.com/asdf8397)| [<img src="https://avatars.githubusercontent.com/u/107820634?v=4" width = "200" >](https://github.com/kangyunmi)|
 | 김선진 | 김동영 | 강윤미 |
  
-
-
 </div>
+
+## 💻 Skill Set
+<div align="center">
+
+| Front | Back | Database | Infra |
+| :---: | :---: | :---: | :---: |
+| <img src= "https://images.velog.io/images/offdutybyblo/post/65c734fd-077c-4a68-8b3b-557c52428511/htmljscss.jpeg" width = "200">| <img src="https://images.velog.io/images/new_wisdom/post/4a0259ee-b980-484b-8bf4-25eb4705459f/flask.png" width = "200">| <img src="https://t1.daumcdn.net/cfile/tistory/9923593359840EC50A" width = "200" >| <img src="https://images.velog.io/images/chaeri93/post/f3592437-f2f9-48a3-8706-172852d5a10a/R800x0.png" width = "200" >|
+| html,css,javascript | Flask | Mongo DB | AWS EC2 |
+ 
+</div>
+
+</br>
 
 ## 선정 이유
 
@@ -32,68 +42,18 @@
 
 # 와이어 프레임
 
+![Slide1](https://user-images.githubusercontent.com/66009926/174580256-28ad6745-c79a-4715-98de-b094d28d78fd.jpg)
+![Slide2](https://user-images.githubusercontent.com/66009926/174580271-8823a247-7312-4373-87fd-74cbcefb5c46.jpg)
+![Slide3](https://user-images.githubusercontent.com/66009926/174580275-5c4fa344-8d86-4d06-af8e-b966e95bd552.jpg)
+![Slide4](https://user-images.githubusercontent.com/66009926/174580277-8b7d602c-1054-4dfb-8e6f-77c5f14960f7.jpg)
+
+
 # 상세 기능
 
 | 기능 명 | Method | URL | Request | Response |
 | --- | --- | --- | --- | --- |
-| 로그인 기능 | POST | /signin | {
-    “id” : string,
-    “pw” : string
-} | {
-    “result” : 0 or 1
-} |
-| 회원가입 기능 | POST | /signup | {
-    “id” : string,
-    “pw” : string,
-    “nickname” : string
-} | {
-    “result” : 0 or 1
-} |
-| 게시글 조회 | GET | /posts | {
-    “address” : string
-} | {
-   “posts” : [ ] 
-} |
-| 게시글 상세 조회 | GET | /posts/{id} | {
-    “id” : integer
-} | {
-
-”id” : integer, 
-
-“address” : string,
-
-“star_point” : integer,
-
-“title” : string,
-
-“description” : string,
-
-“link” : string,
-
-”nickname” : string
-
-} |
-| 게시글 등록 | POST | /posts | {
-
-“address” : string,
-
-“star_point” : integer,
-
-“title” : string,
-
-“description” : string,
-
-“link” : string,
-
-”nickname” : string
-
-} | {
-    “result” : 0 or 1
-} |
-| 게시글 삭제 | DELETE | /posts/{id} | {
-    “id” : integer,
-    “nickname” : string
-} | {
-    “result” : 0 or 1
-} |
-
+| 로그인 기능 | POST | /signin | { </br> &nbsp;&nbsp;&nbsp;&nbsp;“id” : string, </br> &nbsp;&nbsp;&nbsp;&nbsp;“pw” : string </br>} | { </br> &nbsp;&nbsp;&nbsp; &nbsp;“result” : 0 or 1 </br>} |
+| 회원가입 기능 | POST | /signup | {</br> &nbsp;&nbsp;&nbsp; &nbsp;“id” : string,</br> &nbsp;&nbsp;&nbsp; &nbsp;“pw” : string,</br> &nbsp;&nbsp;&nbsp; &nbsp;“nickname” : string</br>} | { </br> &nbsp;&nbsp;&nbsp; &nbsp;“result” : 0 or 1 </br>} |
+| 게시글 조회 | GET | /posts | {</br> &nbsp;&nbsp;&nbsp; &nbsp; “address” : string</br>} | {</br> &nbsp;&nbsp;&nbsp; &nbsp;“posts” : [ ] </br>} |
+| 게시글 등록 | POST | /posts | {</br> &nbsp;&nbsp;&nbsp; &nbsp; “address” : string, </br> &nbsp;&nbsp;&nbsp; &nbsp; “star_point” : integer, </br> &nbsp;&nbsp;&nbsp; &nbsp; “title” : string, </br> &nbsp;&nbsp;&nbsp; &nbsp; “description” : string, </br> &nbsp;&nbsp;&nbsp; &nbsp; “link” : string, </br> &nbsp;&nbsp;&nbsp; &nbsp; ”nickname” : string </br>} | {</br> &nbsp;&nbsp;&nbsp; &nbsp;“result” : 0 or 1</br>} |
+| 게시글 삭제 | DELETE | /posts/{id} | {</br> &nbsp;&nbsp;&nbsp; &nbsp;“id” : integer,</br> &nbsp;&nbsp;&nbsp; &nbsp;“nickname” : string </br>} | {</br> &nbsp;&nbsp;&nbsp; &nbsp;“result” : 0 or 1</br>} |

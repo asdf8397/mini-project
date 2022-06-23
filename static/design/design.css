@@ -1,0 +1,45 @@
+body {
+    /*background-color: RGBA(232, 52, 78, 0.2);*/
+    background-image: url("/static/estate.png");
+    /*background-repeat: no-repeat;*/
+    min-height: 100vh;
+    /*width: auto;*/
+    /*height: auto;*/
+}
+
+.section {
+    padding: 1rem 1.5rem;
+    max-width: 750px;
+    margin: auto;
+}
+
+.title {
+    font-weight: 800;
+    font-size: 5rem;
+    font-family: 'Gamja Flower', cursive;
+}
+
+.subtitle {
+    font-size: 2rem;
+    font-family: 'Stylish', sans-serif;
+}
+
+.is-sparta {
+    color: #e8344e !important;
+}
+
+.button.is-sparta {
+    background-color: #e8344e;
+    border-color: transparent;
+    color: #fff !important;
+}
+
+.button.is-sparta.is-outlined {
+    background-color: transparent;
+    border-color: #e8344e;
+    color: #e8344e !important;
+}
+
+.help {
+    color: gray;
+}
